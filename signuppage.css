@@ -60,4 +60,33 @@
       margin-top: 10px;
 
     }
- 
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 15px;
+  appearance: none; /* removes default arrow in some browsers */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ff66a5;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(255, 102, 165, 0.4);
+}
+
+option {
+  font-size: 15px;
+  padding: 10px;
+}
+
