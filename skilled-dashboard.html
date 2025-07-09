@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skilled Dashboard</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- Firebase App -->
+<script type="module" src="chat.js" defer></script>
+<link rel="stylesheet" href="skilled-dashboard.css"> 
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="top-links">
+        <h2>Welcome</h2>
+        <ul>
+          <li><a href="#" onclick="showSection('profile-section')">Profile</a></li>
+          <li><a href="#" onclick="showSection('requests-section'); fetchRequests();">Mentorship Requests</a></li>
+          <!-- <li><a href="#" onclick="showSection('chat-section'); loadChat();">Messages</a></li> -->
+      <div class="user-card"> <button onclick="showSection('chat-section'); startChatWith('nameUID123')"> Message </button></div>
+          <li><a href="#" onclick="showSection('products-section')">My Products</a></li>
+          <li><a href="#" onclick="showSection('notifications-section')">Notifications</a></li>
+          <li><a href="#" onclick="showSection('settings-section')">Settings</a></li>
+          <li><a href="#" onclick="showSection('logout-section')">Logout</a></li>
+
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- PROFILE  -->
+      <div class="profile-section" id="profile-section">
+        <h2>Your Profile</h2>
+        <div class="profile-card">
+          <img
+            src="https://i.imgur.com/0y0y0y0.png"
+            class="profile-pic"
+            id="profile-pic"
+            alt="Profile Picture"
+          />
+          <div class="profile-info">
+            <p><strong>Name:</strong> <span id="profile-name">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+            <p><strong>Skill:</strong> <span id="profile-skill">Loading...</span></p>
+            <p><strong>Experience:</strong> <span id="profile-experience">Loading...</span></p>
+            <p><strong>Location:</strong> <span id="profile-location">Loading...</span></p>
+            <button class="edit-btn" id="edit-profile-btn">Edit Profile</button>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Your Activity Overview</h3>
+        <div class="stats-container">
+          <div class="stat-card"><h4>Products Listed</h4><p>0</p></div>
+          <div class="stat-card"><h4>Total Income</h4><p>Rs.0</p></div>
+          <div class="stat-card"><h4>Orders Completed</h4><p>0</p></div>
+          <div class="stat-card"><h4>Classes Taken</h4><p>0</p></div>
+        </div>
+      </div>
+       <!-- CHAT SECTION -->
+<div class="chat-section" id="chat-section" style="display: none;">
+  <h2>Chat</h2>
+  
+  <div id="chat-box" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background: #f9f9f9;"></div>
+  <input type="text" id="chat-input" placeholder="Type a message..." style="width: 80%;" />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+
+<!-- Products Section -->
+<div id="products-section" style="display:none;">
+  <h2>My Products</h2>
+  <button id="add-product-btn" class="edit-btn">Add Product</button>
+  <form id="add-product-form" style="display:none; margin-top: 20px;">
+    <label>
+      Product Name:<br />
+      <input type="text" id="product-name" required />
+    </label><br /><br />
+    
+    <label>
+      Price (Rs):<br />
+      <input type="number" id="product-price" min="0" required />
+    </label><br /><br />
+    
+    <label>
+      Category:<br />
+      <input type="text" id="product-category" required />
+    </label><br /><br />
+    
+    <label>
+      Description:<br />
+      <textarea id="product-description" rows="3" required></textarea>
+    </label><br /><br />
+
+     <label for="product-image">Product Image</label>
+          <input id="product-image" type="file" accept="image/*" /> <br><br>
+    
+    <button type="submit" class="edit-btn">Add Product</button>
+    <button type="button" id="cancel-add-product" class="edit-btn" style="background-color: #999;">Cancel</button>
+  </form>
+  <div id="products-list" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px;"></div>
+</div>
+
+      <!-- OTHER SECTIONS -->
+      <div id="requests-section" style="display:none;">
+        <h2>Mentorship Requests</h2>
+        <div id="requests-list"></div>
+      </div>
+      <div id="products-section" style="display:none;"><h2>My Products</h2></div>
+      <div id="notifications-section" style="display:none;"><h2>Notifications</h2></div>
+      <div id="settings-section" style="display:none;"><h2>Settings</h2></div>
+      <div id="logout-section" style="display:none;"><h2>Logged Out</h2></div>
+    </main>
+  </div>
+  <script type="module" src="skilled-dashboard.js"></script>
+</body>
+</html>
