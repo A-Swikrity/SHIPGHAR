@@ -1,0 +1,63 @@
+ 
+    body {  
+      font-family: "poppins";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height:100vh;
+      margin: 0;
+    }
+    .signup-box {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .signup-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #d63384;
+    
+    }
+    .signup-box input[type="text"],
+    .signup-box input[type="email"],
+    .signup-box input[type="password"] {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .signup-box label {
+      font-weight: bold;
+      color: #444;
+    }
+    .signup-box .radio-group {
+      margin: 15px 0;
+    }
+    .signup-box .radio-group label {
+      margin-right: 15px;
+      font-weight: normal;
+    }
+    .signup-box button {
+        margin-top: 10px;
+      width: 100%;
+      padding: 12px;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .signup-box button:hover {
+      background-color: #720f3f;
+      
+    }
+    .conditional-field {
+      display: none;
+      margin-top: 10px;
+
+    }
+ 

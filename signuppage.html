@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SignUp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="signuppage.css"> 
+</head>
+<body>
+  <div class="signup-box">
+    <h2> Tell Us About Yourself</h2>
+  
+      <label>Full Name</label><br />
+      <input type="text" id="name" placeholder="Your name" required /><br />
+      <label>Email</label><br />
+      <input type="email" id="email" placeholder="you@example.com" required /><br />
+
+      <label>Password</label><br />
+      <input type="password" id="password" placeholder="Enter password" required /><br />
+
+      <label>Location</label><br />
+      <input type="text" id="location" placeholder="e.g., butwal, Nepal" required /><br />
+
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="role" value="skilled" required />
+          <b> Skilled (Want to Teach & Sell)</b>
+        </label><br /><br />
+        <label>
+          <input type="radio" name="role" value="unskilled" />
+          <b> Unskilled (Want to Learn)</b>
+        </label><br /><br />
+        <label>
+          <input type="radio" name="role" value="skilled-not-monetized" />
+          <b> Skilled and Not Monetized</b>
+        </label><br />
+      </div>
+
+      <!-- Skilled  -->
+        <!-- <input type="text" id="skill" placeholder="e.g., Handicrafts" /><br /> -->
+         <div id="unskilledFields" class="conditional-field">
+  <label for="skillToLearn">Skill You are proficient in </label><br />
+  <select id="skillToLearn" required>
+    <option value="">-- Select a Skill | कुनै सीप छान्नुहोस् --</option>
+    <option value="handicraft-making">Handicraft Making | हस्तकला बनाउने</option>
+    <option value="tailoring-sewing">Tailoring & Sewing | सिलाई र कपडा सिलाउने</option>
+    <option value="knitting-crochet">Knitting & Crochet | बुनाई र क्रोशे</option>
+    <option value="pickle-making">Pickle Making | अचार बनाउने</option>
+    <option value="traditional-cooking">Traditional Cooking | परम्परागत खाना पकाउने</option>
+    <option value="dhaka-weaving">Dhaka Weaving | ढाका बुनाई</option>
+    <option value="mithila-art">Mithila Art | मिथिला कला</option>
+    <option value="pottery">Pottery | माटोका भाँडा बनाउने</option>
+    <option value="jewelry-making">Jewelry Making | गहना बनाउने</option>
+    <option value="handmade-soap">Handmade Soap/Cosmetics | हातले बनाएको साबुन /सौन्दर्य सामान</option>
+    <option value="bamboo-craft">Bamboo Craft | बाँसको सामग्री बनाउने</option>
+    <option value="organic-farming">Organic Farming | अर्गानिक खेती</option>
+    <option value="mushroom-farming">Mushroom Farming | च्याउ खेती</option>
+    <option value="beekeeping">Beekeeping | मह पालन</option>
+    <option value="wool-felt-product">Woolen Product Making | ऊनको सामग्री उत्पादन</option>
+    <option value="homemade-bakery">Homemade Bakery | घरमै बनाएको बेकरी</option>
+    <option value="beautician-services">Beautician Services | ब्यूटिसियन सेवा</option>
+    <option value="candle-making">Candle Making | मैनबत्ती बनाउने</option>
+    <option value="paper-craft">Paper Craft | कागज कला</option>
+    <option value="embroidery">Embroidery | कढाई</option>
+
+<!-- </div> -->
+    <option value="others">Others</option>
+  </select>
+
+        <label> Years of Experience</label><br />
+        <input type="text" id="experience" placeholder="e.g., 3 years" />
+      </div>
+
+      <!-- Unskilled  -->
+<div id="unskilledFields" class="conditional-field">
+  <label for="skillToLearn">Skill You Want to Learn</label><br />
+  <select id="skillToLearn" required>
+    <option value="">-- Select a Skill | कुनै सीप छान्नुहोस् --</option>
+    <option value="handicraft-making">Handicraft Making | हस्तकला बनाउने</option>
+    <option value="tailoring-sewing">Tailoring & Sewing | सिलाई र कपडा सिलाउने</option>
+    <option value="knitting-crochet">Knitting & Crochet | बुनाई र क्रोशे</option>
+    <option value="pickle-making">Pickle Making | अचार बनाउने</option>
+    <option value="traditional-cooking">Traditional Cooking | परम्परागत खाना पकाउने</option>
+    <option value="dhaka-weaving">Dhaka Weaving | ढाका बुनाई</option>
+    <option value="mithila-art">Mithila Art | मिथिला कला</option>
+    <option value="pottery">Pottery | माटोका भाँडा बनाउने</option>
+    <option value="jewelry-making">Jewelry Making | गहना बनाउने</option>
+    <option value="handmade-soap">Handmade Soap/Cosmetics | हातले बनाएको साबुन / सौन्दर्य सामान</option>
+    <option value="bamboo-craft">Bamboo Craft | बाँसको सामग्री बनाउने</option>
+    <option value="organic-farming">Organic Farming | अर्गानिक खेती</option>
+    <option value="mushroom-farming">Mushroom Farming | च्याउ खेती</option>
+    <option value="beekeeping">Beekeeping | मह पालन</option>
+    <option value="wool-felt-product">Woolen Product Making | ऊनको सामग्री उत्पादन</option>
+    <option value="homemade-bakery">Homemade Bakery | घरमै बनाएको बेकरी</option>
+    <option value="beautician-services">Beautician Services | ब्यूटिसियन सेवा</option>
+    <option value="candle-making">Candle Making | मैनबत्ती बनाउने</option>
+    <option value="paper-craft">Paper Craft | कागज कला</option>
+    <option value="embroidery">Embroidery | कढाई</option>
+<!-- </div> -->
+    <option value="others">Others</option>
+  </select>
+</div>
+       <button type="submit"> SignUp </button>
+    </form>
+  </div>
+  <script src="signuppage.js"> </script>
+</body></html>
