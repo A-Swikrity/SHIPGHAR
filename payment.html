@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payment</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+  <style>
+    body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-content {
+  flex: 1;
+  max-width: 500px;
+  margin: 100px auto 40px; /* <== adds top margin for header space */
+  padding: 0 20px;
+}
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .payment-method {
+      margin-bottom: 20px;
+    }
+    #creditCardForm {
+      display: none;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="month"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: rgb(3, 122, 122);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgb(3, 94, 94);
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <!-- HEADER -->
+  <div id="1"></div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+    <h1>Payment</h1>
+    <div>
+      <label>
+        <input type="radio" name="paymentMethod" value="cod" /> Cash on Delivery
+      </label>
+      <label>
+        <input type="radio" name="paymentMethod" value="creditCard" /> Credit Card
+      </label>
+    </div>
+
+    <form id="creditCardForm">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" />
+
+      <label for="expiry">Expiry Date</label>
+      <input type="month" id="expiry" />
+
+      <label for="cvv">CVV</label>
+      <input type="number" id="cvv" placeholder="123" maxlength="3" />
+
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div id="4"></div>
+
+  <!-- JavaScript -->
+  <script>
+    // Load header and footer with a single reusable function
+    function load(url, id) {
+      const req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(id).innerHTML = req.responseText;
+    }
+
+    load("header.html", "1");
+    load("footer.html", "4");
+
+    // Payment method logic
+    const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
+    const creditCardForm = document.getElementById('creditCardForm');
+
+    paymentRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'creditCard' && radio.checked) {
+          creditCardForm.style.display = 'block';
+        } else {
+          creditCardForm.style.display = 'none';
+          if (radio.value === 'cod' && radio.checked) {
+            window.location.href = 'orderPlaced.html';
+          }
+        }
+      });
+    });
+
+    creditCardForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Payment successful! Redirecting to order confirmation.');
+      window.location.href = 'orderPlaced.html';
+    });
+  </script>
+
+</body>
+</html>
