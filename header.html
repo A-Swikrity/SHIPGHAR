@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> HEADER </title>
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style> 
+    body
+{
+    margin: 0;
+}
+#badge
+{
+    position: absolute;
+    background-color: rgb(255, 30, 30);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 14px;
+    top: 10px;
+    right:158px;
+}
+#container
+{
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1.5fr 1.5fr 5fr 1fr;
+    font-family: 'Lato', sans-serif;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    position: fixed;
+}
+#shopName 
+{
+    font-size: 40px; 
+    font-family: 'Lato', sans-serif;
+}
+#shopName a
+{
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+#shopName > b
+{
+    font-weight: 900;
+    font: black;
+}
+.search
+{
+    padding: 14px;
+    /* color: gray; */
+    color: rgb(29, 29, 29);
+    min-width: 25px;
+    text-align: center;
+    position: absolute;
+}
+
+.addedToCart
+{
+    font-size: 1.5em;
+    margin-right: 25px;
+}
+#user
+{
+    display: flex;
+    /* float: right; */
+    align-items: center;
+}
+
+.userIcon
+{
+    font-size:28px;
+}
+#input 
+{
+    width: 35em;
+    height: 3em;
+    padding: 2px 50px;
+    background-color: rgb(241, 241, 241);
+    border: none;
+    border-radius: 5px;
+}
+#input::placeholder
+{
+    font-weight: bold;
+}
+#input:focus
+{
+    outline: none;
+}
+#user a
+{
+    color: rgb(29, 29, 29)
+}
+
+</style>
+</head>
+<body>
+    
+    <header>
+        <section>
+            <!-- MAIN  -->
+            <div id="container">
+                <!-- SHOP NAME -->
+                <div id="shopName"><a href="ecommercesite.html"> <img src="images/shipghar.png" alt="Shop Logo" style="height: 60px;">  </a></div>
+            
+                    <div id="collectionshere" style="position: relative; display: inline-block;">
+  <button id="dropdownBtn" style="padding: 10px 20px; cursor: pointer; font-size: 16px; font-weight: bold; color: black; border: none; background-color: white; ">
+    Shop Categories ▼
+  </button>
+</div>
+                    <!-- SEARCH SECTION -->
+                    <div id="search">
+                        <i class="fas fa-search search"></i>
+                        <input type="text" id="input" name="searchBox" placeholder="Search for the Products">
+                    </div>
+                    
+                    <div id="user">
+    <a href="cart.html">
+        <i class="fas fa-cart-shopping addedToCart">
+            <div id="badge">0</div>
+        </i>
+    </a>
+    <a href="#">
+        <i class="fas fa-user-circle userIcon"></i>
+    </a>
+</div>
+            </div>
+
+        </section>
+    </header>
+
+</body>
+</html>
